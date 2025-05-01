@@ -9,7 +9,6 @@ def knapsack_dp(items, max_weight):
     n = len(items)
     dp = [[0] * (max_weight + 1) for _ in range(n + 1)]
 
-    # Build DP table
     for i in range(1, n + 1):
         for w in range(max_weight + 1):
             if items[i - 1]['weight'] <= w:
@@ -20,7 +19,6 @@ def knapsack_dp(items, max_weight):
             else:
                 dp[i][w] = dp[i - 1][w]
 
-    # Reconstruct selected items
     selected_items = []
     w = max_weight
     for i in range(n, 0, -1):
