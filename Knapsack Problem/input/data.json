@@ -1,0 +1,17 @@
+{
+    "maximum_weight": 420,
+    "items": [
+      { "id": 1, "benefit": 20, "weight": 15 },
+      { "id": 2, "benefit": 40, "weight": 32 },
+      { "id": 3, "benefit": 50, "weight": 60 },
+      { "id": 4, "benefit": 36, "weight": 80 },
+      { "id": 5, "benefit": 26, "weight": 43 },
+      { "id": 6, "benefit": 64, "weight": 120 },
+      { "id": 7, "benefit": 54, "weight": 77 },
+      { "id": 8, "benefit": 18, "weight": 6 },
+      { "id": 9, "benefit": 46, "weight": 93 },
+      { "id": 10, "benefit": 28, "weight": 35 },
+      { "id": 11, "benefit": 25, "weight": 37 }
+    ]
+  }
+  
