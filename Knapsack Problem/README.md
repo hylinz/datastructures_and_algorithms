@@ -22,28 +22,29 @@ So, here’s what my code does in a nutshell:
    - The `dp` table is a 2D list where each row corresponds to items considered so far, and each column corresponds to a possible weight limit from 0 up to the max weight.
    Like this:
 
-    | Item | Weight | Benefit |
-    |-------|--------|---------|
-    | 1     | 1      | 10      |
-    | 2     | 2      | 15      |
-    | 3     | 3      | 40      |
+        | Item | Weight | Benefit |
+        |-------|--------|---------|
+        | 1     | 1      | 10      |
+        | 2     | 2      | 15      |
+        | 3     | 3      | 40      |
 
 
    - For each item and each possible weight, the code decides whether it’s better to take the item or skip it:
      - If the item fits in the current weight limit, compare the benefit of taking it vs not taking it.
      - Otherwise, just keep the benefit without taking the item.
 
-     ```python
-    for i in range(1, n + 1):
-    for w in range(max_weight + 1):
-        if items[i - 1]['weight'] <= w:
-            dp[i][w] = max(
-                dp[i - 1][w],
-                dp[i - 1][w - items[i - 1]['weight']] + items[i - 1]['benefit']
-            )
-        else:
-            dp[i][w] = dp[i - 1][w]
-     ```
+        ```python
+        for i in range(1, n + 1):
+        for w in range(max_weight + 1):
+            if items[i - 1]['weight'] <= w:
+                dp[i][w] = max(
+                    dp[i - 1][w],
+                    dp[i - 1][w - items[i - 1]['weight']] + items[i - 1]['benefit']
+                )
+            else:
+                dp[i][w] = dp[i - 1][w]
+        ```
+
 
 4. **Backtracking**  
    After filling out the `dp` table, I start from the bottom-right corne (saw this in a youtube video) and move backwards to figure out which items contributed to the max benefit. If the benefit changed when including an item, that item is part of the solution.
@@ -60,6 +61,7 @@ So, here’s what my code does in a nutshell:
 5. **Output**  
    Finally, it prints out the total weight and total benefit of the items taken, plus a list of the item IDs that were chosen.
 
+    Result:
     ----------------------------------------
 
     Mr Knapsack is walking out with:
